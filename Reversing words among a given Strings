@@ -1,0 +1,23 @@
+String reverseWords(String S)
+    {
+        int n = S.length();
+        String str1 = " ";
+        
+        int j = 0;
+        for(int i = 0;i<n;i++)
+        {
+            if(S.charAt(i) == '.')
+            {
+                str1 = S.substring(j,i) + "." + str1;
+                j = i+1;
+                
+            }
+            
+        }
+        //till now we have value of j = i + 1.So i am using that one .
+        str1 = S.substring(j,n) + "." + str1;
+        
+        
+        //System.out.println(str1);
+        return str1.substring(0,n);
+    }
