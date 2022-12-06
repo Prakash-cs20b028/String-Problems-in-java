@@ -1,0 +1,39 @@
+String longestCommonPrefix(String arr[], int n){
+        
+        Arrays.sort(arr);
+        String str1 = arr[0];
+        String str2 = arr[n-1];
+        String str3 = "";
+        int len = str1.length();
+        
+        
+        for(int i= 0;i<len;i++)
+        {
+            if(str1.charAt(i) == str2.charAt(i))
+            {
+                str3 = str3 + str1.charAt(i);
+                //break;
+            }
+            else
+            {
+                break;
+            }
+        }
+        //System.out.println(str3.length());
+        if(str3.length() == 0)
+        {
+            return "-1";
+        }
+        else
+        {
+            return str3; 
+        }
+        //OVerall idea is that firstly i sorted the array in increasing order to get
+        //len of smaller and bigger string.
+        //After that i made a for loop and checking first and last string.
+        //if number of char is similar to first and last then i will add and return it
+        //otherwise if no common element is there then i will print -1.
+        
+        //                That's it.
+       
+    }
