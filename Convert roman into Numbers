@@ -1,0 +1,39 @@
+public int romanToDecimal(String str) {
+        
+        int sum = 0;
+        
+        for(int i = 0;i<str.length();i++)
+        {
+            // for example take  XIV
+            int n1 = fun(str.charAt(i));  //taking the first character's value
+            //n1 = 10;
+            if(i + 1 < str.length())
+            {
+                int n2 = fun(str.charAt(i+1)); //value of second character
+                //n2 = 1
+                if(n1 >= n2)
+                {
+                    sum =sum + n1;
+                    
+                }
+                else
+                {
+                    sum = sum + n2 - n1;
+                    i++;  //here we added i++ because we have already taken i+1 in n2
+                    // if this condition it true then we take two element.
+                    //so we need to increment i here only otherwise we will again 
+                    //have to take n2 as n1.
+                }
+            }
+            else
+            {
+                sum = sum + n1;  //we are adding sum to n1 because lets assume two 
+                //char.So, one character's value we get by loop and for second char
+                //if condition wil not be run so we directly add that value to 
+                //previous sum.
+                //Literally we are doing this for the last element.
+            }
+            
+        }
+    return sum;
+    }
